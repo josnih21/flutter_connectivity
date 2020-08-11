@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_flutter_pet_project/screens/connect_screen_secondary.dart';
 import 'package:connectivity_flutter_pet_project/screens/connection_screen.dart';
 import 'package:connectivity_flutter_pet_project/screens/no_connection_screen.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +33,7 @@ class _MyAppState extends State<MyApp> {
           MaterialPageRoute(builder: (BuildContext context) => NoConnectionScreen()),
         );
       } else if (_previousResult == ConnectivityResult.none) {
-        navigator.currentState.push(
-          MaterialPageRoute(builder: (BuildContext context) => ConnectionScreen()),
-        );
+        navigator.currentState.pop();
       }
 
       _previousResult = connectivityResult;
@@ -51,7 +50,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: navigator,
-      home: ConnectionScreen(),
+      initialRoute: 'home',
+      routes: {
+        'home': (BuildContext context) => ConnectionScreen(),
+        'screen2': (BuildContext context) => ConnectionScreen2(),
+      },
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:connectivity_flutter_pet_project/screens/connect_screen_secondary.dart';
 import 'package:flutter/material.dart';
 
 class ConnectionScreen extends StatelessWidget {
@@ -9,9 +10,9 @@ class ConnectionScreen extends StatelessWidget {
       ),
       body: Container(
         child: Center(
-            child: Text(
-          'Connection allowed',
-          style: TextStyle(fontSize: 40),
+            child: FlatButton(
+          child: Text('change screen'),
+          onPressed: () => Navigator.of(context).pushNamed('screen2'),
         )),
       ),
     );
