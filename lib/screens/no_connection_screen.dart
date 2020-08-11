@@ -7,11 +7,15 @@ class NoConnectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('connection'),
+        title: Text(' no connection'),
       ),
       body: Container(
-        child: Image.network('https://direct.rhapsody.com/imageserver/images/alb.395484883/500x500.jpg'),
-      ),
+          child: Center(
+        child: Text(
+          'No connection allowed',
+          style: TextStyle(fontSize: 40),
+        ),
+      )),
     );
   }
 }
